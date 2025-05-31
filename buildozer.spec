@@ -13,7 +13,7 @@ package.domain = com.jai_jai_mahakal_bholenath_baba_27
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf
+source.include_exts = py,png,jpg,kv,atlas,ttf,gif
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -44,10 +44,10 @@ requirements = python3,kivy,kivymd,requests
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/assets/a1.png
+presplash.filename = %(source.dir)s/assets/g1.gif
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/a1.png
+icon.filename = %(source.dir)s/assets/a2.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
