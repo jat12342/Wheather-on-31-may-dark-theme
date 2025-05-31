@@ -113,7 +113,7 @@ Manager:
                 pos_hint: {'top': 1}
     
                 Image:
-                    source: "/storage/emulated/0/Image py/dow_1748579604.jpg"
+                    source: "assets/a1.png"
                     size_hint: (1, None)
                     height: "120dp"
                     allow_stretch: True
@@ -209,8 +209,8 @@ class Demo(MDApp):
                 b1=BoxLayout(orientation='vertical',size_hint_y=None,spacing='10dp',padding='20dp')                    
 
                 b1.bind(minimum_height=b1.setter('height')) 
-                so1='/storage/emulated/0/download/download__5_-removebg-preview.png'
-                so2='/storage/emulated/0/download/download__4_-removebg-preview.png'
+                so1='assets/tl.png'
+                so2='assets/th.png'
         
                 i1 = Image(size_hint_y=None, height='150dp', allow_stretch=True, keep_ratio=True, pos_hint={'center_x':0.5})
                 if int(tem) <= 15:
@@ -297,4 +297,4 @@ class Demo(MDApp):
                                                                             
                                                 
                                                         
-Demo().run()                                                                        
+Demo().run()                                                                                                                                  
