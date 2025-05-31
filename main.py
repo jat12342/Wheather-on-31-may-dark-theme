@@ -86,8 +86,16 @@ Manager:
                             id:s1
                             pos_hint:{'center_x':0.8,'center_y':0.5}
                             on_active:app.swi(self.active)
-                        
-                      
+                            
+                    OneLineIconListItem:
+                        id:ol2
+                        text:'About'   
+                        bold:True
+                        on_press:app.info()
+                        IconLeftWidget:
+                            icon:'information-outline' 
+                                                                                                 
+                                          
                 
 
 
@@ -241,7 +249,7 @@ class Demo(MDApp):
                 o1.add_widget(ic)                      
                 b1.add_widget(i1)
                 b1.add_widget(l2)
-              
+                              
                 b1.add_widget(o1)    
                 b1.add_widget(o2)
                 b1.add_widget(o3)
@@ -250,6 +258,7 @@ class Demo(MDApp):
                 m.add_widget(s1)
                 popup.add_widget(m)   
                 popup.open() 
+                
             else:
                 toast('City Not Found')           
                 
@@ -269,6 +278,7 @@ class Demo(MDApp):
             toast(f" {e}")
         except Exception as e:
             toast(f"{e}")
+            
         
     
         
@@ -293,8 +303,33 @@ class Demo(MDApp):
             self.b.get_screen('home').ids.bon1.panel_color=(0,0.5,0.5,1)
             
             toast('Dark Mode') 
-                                                                            
-                                                                            
+            
+    def info(self):
+        pop=ModalView(size_hint=(None,None),size=('250dp','400dp'),auto_dismiss=True)      
+        m1=MDCard()
+        b1=BoxLayout(size_hint_y=None,orientation='vertical',height='400dp',pos_hint={'top':1},spacing='1dp',padding='5dp')
+        l1=MDLabel(text='Developed by Bhavishya Rajput')
+        l2=MDLabel(text='launch_first_version @ may 31 2025')
+        l3=OneLineIconListItem(text='@youtube')
+        ic1=IconLeftWidget(icon='youtube')
+        ic1.theme_text_color='Custom'
+        ic1.text_color=(1,0,0,1)
+        l3.bind(on_press=self.y)
+        l3.add_widget(ic1)                                     
+        l4=MDLabel(text='This @pp help to find Weather',font_style='Caption')
+        l5=MDLabel(text='Users_########################________ An work of Calculator Screen Under Construction when the the calc screen added you notify',font_style='Caption')
+        
+
+        b1.add_widget(l1)     
+        b1.add_widget(l2)
+        b1.add_widget(l3)
+        b1.add_widget(l4)
+        b1.add_widget(l5)
+        m1.add_widget(b1)             
+        pop.add_widget(m1)
+        pop.open()                                                                                                                                                 
+    def y(self,*args):
+      webbrowser.open('https://youtube.com/shorts/Mgx8ChaMluU?si=aW263HsrojPAGaHP')                                                                                                                              
                                                 
                                                         
-Demo().run()                                                                                                                                  
+Demo().run()                                                                        
