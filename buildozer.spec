@@ -1,19 +1,19 @@
 [app]
 
 # (str) Title of your application
-title = Weather
+title = videoplayer
 
 # (str) Package name
-package.name = mahakal_baba_27
+package.name = mahakal_baba_29
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.jai_jai_mahakal_bholenath_baba_27
+package.domain = com.jai_jai_mahakal_bholenath_baba_29
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf,gif
+source.include_exts = py,png,jpg,kv,atlas,ttf,gif,mp4
 
 # (list) List of inclusions using pattern matching
 #source.include_patterns = assets/*,images/*.png
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,requests
+requirements = python3,kivy,kivymd,requests,pyplayer
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
