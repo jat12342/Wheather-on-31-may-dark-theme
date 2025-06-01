@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = videoplayer
+title = 2 in 1
 
 # (str) Package name
-package.name = mahakal_baba_29
+package.name = mahakal_baba_30
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.jai_jai_mahakal_bholenath_baba_29
+package.domain = com.jai_jai_mahakal_bholenath_baba_30
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -37,7 +37,7 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,kivymd,requests,ffpyplayer
+requirements = python3,kivy,kivymd,requests
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
