@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = 2 in 1
+title = image_downloader
 
 # (str) Package name
-package.name = mahakal_baba_30
+package.name = mahakal_baba_31
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = com.jai_jai_mahakal_bholenath_baba_30
+package.domain = com.jai__jai_mahakal_bholenath_baba_31
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -44,10 +44,10 @@ requirements = python3,kivy,kivymd,requests,android
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/assets/g1.gif
+presplash.filename = %(source.dir)s/assets/im1.png
 
 # (str) Icon of the application
-icon.filename = %(source.dir)s/assets/i1.png
+icon.filename = %(source.dir)s/assets/ii1.png
 
 # (list) Supported orientations
 # Valid options are: landscape, portrait, portrait-reverse or landscape-reverse
