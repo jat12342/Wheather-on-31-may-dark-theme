@@ -60,7 +60,56 @@ Manager:
         md_bg_color:0,0,1,1
 
     MDNavigationDrawer:
-        id:nd1
+        id:nd1     
+        
+        ScrollView:
+            
+            MDBoxLayout:
+                id:mdb1
+                pos_hint:{'center_y':0.4}
+                orientation:'vertical'
+                spacing:10
+                padding:10
+                adaptive_height:True
+                Image:
+                    source:'assets/g1.gif'
+                    size_hint_y:None         
+                    allow_stretch:True
+                    keep_ratio:False
+                    anim_delay:0.1
+                    height:'250dp'   
+                
+                
+                MDLabel:
+                    text:'Hello Users'   
+                    font_name:'RobotoThin'
+                    adaptive_height:True                                                                                                                                                                                                                      
+                MDLabel:
+                    text:'contact mail:- bhavishyarajput75@gmail.com'   
+                    font_name:'RobotoThin'
+                    adaptive_height:True   
+                    font_size:24      
+                                                                                                                                                                                                                                                                                                        
+                MDLabel:
+                    text:'developed by @ Bhavishya Rajput'   
+                    font_name:'RobotoThin'
+                    adaptive_height:True         
+                                                                    
+                                                                                                                          
+                OneLineIconListItem:
+                    text:'click to see'        
+                    size_hint_y:None     
+                   
+                    on_press:app.youtube()
+                   
+                                                                                                                                                                                                            
+                MDLabel:
+                    text:'Thanks For @ Download'   
+                    font_name:'RobotoThin'
+                    adaptive_height:True   
+                    font_size:50                                                               
+                                                                                                        
+            
         
      
 
@@ -106,6 +155,8 @@ class Demo(MDApp):
     def on_start(self):
         if platform == 'android':
             request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
+            
+      
         try:               
             self.urls ='https://api.unsplash.com/photos/random?query=mountain&client_id=TRIHpYC1opzKSS-FVooWkd55u6iExKUinZlIDmwwlnQ'  
             for i in range(0,5):                
@@ -228,7 +279,32 @@ class Demo(MDApp):
                 rr3.add_widget(rr4)      
             toast('REFRESH 2')                           
 
+
                                         
-                        
-        
+    def youtube(self):
+        try:
+            webbrowser.open('https://youtube.com/shorts/Mgx8ChaMluU?si=lwfb7gplyFhCOokR') 
+                             
+
+        except requests.exceptions.ConnectionError:
+            toast('NO INTERNET CONNECTION')                                                                  
+        except Exception as e:
+            toast(str(e))                                                                              
+
+
+
+                                        
+
+
+
+
+
+
+
+
+
+
+
+                
 Demo().run()      
+    
