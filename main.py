@@ -68,15 +68,14 @@ Manager:
                 id:mdb1
                 pos_hint:{'center_y':0.4}
                 orientation:'vertical'
-                spacing:10
+                spacing:30
                 padding:10
                 adaptive_height:True
                 Image:
-                    source:'assets/g1.gif'
+                    source:'assets/a1.png'
                     size_hint_y:None         
                     allow_stretch:True
-                    keep_ratio:False
-                    anim_delay:0.1
+                    keep_ratio:False                
                     height:'250dp'   
                 
                 
@@ -109,7 +108,10 @@ Manager:
                     adaptive_height:True   
                     font_size:50                                                               
                                                                                                         
-            
+                MDRectangleFlatButton:
+                    text:'Download build.yml'
+                    adaptive_height:True   
+                    on_press:app.buy() 
         
      
 
@@ -155,7 +157,7 @@ class Demo(MDApp):
     def on_start(self):
         if platform == 'android':
             request_permissions([Permission.WRITE_EXTERNAL_STORAGE, Permission.READ_EXTERNAL_STORAGE])
-            
+                        
       
         try:               
             self.urls ='https://api.unsplash.com/photos/random?query=mountain&client_id=TRIHpYC1opzKSS-FVooWkd55u6iExKUinZlIDmwwlnQ'  
@@ -292,9 +294,45 @@ class Demo(MDApp):
             toast(str(e))                                                                              
 
 
+    def buy(self):
+        build1="""name: Build Kivy APK
 
-                                        
+on:
+  push:
+    branches: [main]
 
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build APK with Buildozer
+        uses: digreatbrian/buildozer-action@v2
+        with:
+          buildozer-cmd: buildozer -v android debug
+          work-dir: .  # Directory containing main.py and buildozer.spec
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kivy-apk
+          path: ./bin/*.apk
+"""                                   
+        try:
+            folder = os.path.join(primary_external_storage_path(),'Download','build_yml')   
+            f='build.txt' 
+            if not os.path.exists(folder):
+                os.makedirs(folder)
+            fi=os.path.join(folder,f)
+            with open(fi,'w') as f:
+                f.write(build1)       
+            toast('DOWNLOADED')                                                                                     
+                                                            
+        except Exception as e:
+            toast(str(e))            
 
 
 
